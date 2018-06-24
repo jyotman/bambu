@@ -24,7 +24,6 @@ exports.createUser = async (req, res, next) => {
 }
 
 function getProfile(userAnswers) {
-    // const score = Math.reduce(userAnswers.map(userAnswer => userAnswer.answer.score));
     const score = userAnswers.reduce((result, userAnswer) => result + userAnswer.answer.score, 0);
     if (score >= 8)
         return 'A';
