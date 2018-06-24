@@ -7,7 +7,8 @@ const express = require('express'),
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/bambu');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/bambu';
+mongoose.connect(mongoUri);
 
 mongoose.connection.on('open', () => console.log('Mongo Connected'));
 mongoose.connection.on('error', err => {
