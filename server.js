@@ -22,4 +22,4 @@ app.use(morgan('dev'));
 
 app.use('/user', user);
 
-app.listen(3000, () => console.log('Bambu app listening on port 3000!'));
+app.listen(process.env.PORT || 3000, () => console.log('Bambu app listening on port 3000!'));
