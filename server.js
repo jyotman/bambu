@@ -3,6 +3,7 @@
 const express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
+    morgan = require('morgan'),
     user = require('./route/user');
 
 const app = express();
@@ -17,6 +18,7 @@ mongoose.connection.on('error', err => {
 });
 
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 app.use('/user', user);
 
